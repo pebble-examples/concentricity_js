@@ -5,7 +5,7 @@ var round = require('./round');
 var rect = require('./rect');
 
 function DrawCommand(platform) {
-  if (['aplite', 'basalt', 'diorite', 'emery'].indexOf(platform) >= 0) {
+  if (['basalt', 'diorite', 'emery'].indexOf(platform) >= 0) {
     this.hours = rect.drawHours;
     this.minutes = rect.drawMinutes;
     this.seconds = rect.drawSeconds;
