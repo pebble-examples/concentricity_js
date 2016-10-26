@@ -5,23 +5,23 @@ var round = require('./round');
 var rect = require('./rect');
 
 function DrawCommand(platform) {
-  if (['basalt', 'diorite', 'emery'].indexOf(platform) >= 0) {
-    this.hours = rect.drawHours;
-    this.minutes = rect.drawMinutes;
-    this.seconds = rect.drawSeconds;
-  } else if (platform === 'chalk') {
+  if (platform === 'chalk') {
     this.hours = round.drawHours;
     this.minutes = round.drawMinutes;
     this.seconds = round.drawSeconds;
+  } else {
+    this.hours = rect.drawHours;
+    this.minutes = rect.drawMinutes;
+    this.seconds = rect.drawSeconds;
   }
-  if (['basalt', 'chalk', 'emery'].indexOf(platform) >= 0) {
-    this.hourColor = "bluemoon";
-    this.minuteColor = "vividviolet";
-    this.secondColor = "richbrilliantlavender";
-  } else if (platform === 'diorite') {
+  if (platform === 'diorite') {
     this.hourColor = "white";
     this.minuteColor = "white";
     this.secondColor = "white";
+  } else {
+    this.hourColor = "bluemoon";
+    this.minuteColor = "vividviolet";
+    this.secondColor = "richbrilliantlavender";
   }
 }
 
