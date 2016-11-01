@@ -21,7 +21,7 @@ var drawArc = function(ctx, arcId, endAngle, color) {
   // Set the drawing color
   ctx.fillStyle = color;
 
-  if (endAngle == 0) {
+  if (endAngle === 0) {
     ctx.rockyFillRadial(centerX, centerY, outerRadius - strokeWidth, outerRadius,
       -startAngleOffset, (2 * Math.PI) - startAngleOffset);
   } else {
